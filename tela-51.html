@@ -1,0 +1,229 @@
+<style>
+	ul,
+	li {
+		list-style-type: disc;
+		margin-bottom: 3px;
+		margin-left: 5px;
+	}
+
+	.tab {
+		overflow: hidden;
+		display: flex;
+		gap: 10.5px;
+		width: 100%;
+	}
+
+	.tab button {
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		background-color: var(--color-orange4);
+		font-weight: 900;
+		padding: 10px 15px;
+		border: none;
+		outline: none;
+		text-align: left;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: 0.3s;
+		font-size: 12.2px;
+	}
+
+	.tab button.active {
+		background-color: var(--color-orange);
+	}
+
+	.tabcontent {
+		display: none;
+		border-top: none;
+		float: left;
+		background-image: linear-gradient(to top, var(--color-orange), var(--color-orange4)) !important;
+		/* color: #fff; */
+		font-weight: 500;
+		padding: 20px 50px;
+		border: none;
+		width: 84.5%;
+		border-left: none;
+		height: 265px;
+	}
+
+	.in-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+		gap: 40px;
+	}
+
+	.in-content-grid {
+		display: grid;
+		align-items: end;
+		gap: 40px;
+	}
+
+	.grid-item {
+		grid-template:
+			"img txt1 " 85px
+			"img lista " 120px
+			/ 150px 1fr
+	}
+
+	.img {
+		grid-area: img;
+		align-self: center
+	}
+
+	.txt1 {
+		grid-area: txt1;
+	}
+
+	.txt2 {
+		grid-area: txt2;
+	}
+
+	.lista {
+		grid-area: lista;
+	}
+
+	.bg-div {
+		background-color: var(--color-blue2);
+		color: #fff;
+		padding: 10px;
+		width: 92%;
+		margin: 35px auto;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	td,
+	th {
+		border: 1px solid black;
+		padding: 8px;
+	}
+
+	tr:nth-child(2) {
+		background-color: #d9e2f3;
+	}
+
+	tr:not(:nth-child(2)) {
+		background-color: #fbe4d5;
+	}
+</style>
+<div class="largura-1_1">
+	<img style="width:100%; right: 0px;" src="recursos/imgs/RM_M1A1_Banner01.svg">
+	<div style="position: absolute;top: 11px;left: 96px;">
+		<p style="font-family: 'OpenSans', sans-serif;color: #08536A;font-size: 15px;font-weight: 900;">POLÍTICAS
+			PÚBLICAS EM SAÚDE</p>
+	</div>
+</div>
+<div style="margin: 20px 50px;">
+	<div class="tab">
+		<button class="tablinks bg-btn5 active" onclick="openTab(event, '0')" id="defaultOpen">0</button>
+		<button class="tablinks bg-btn5" onclick="openTab(event, '1')">1</button>
+		<button class="tablinks bg-btn5" onclick="openTab(event, '2')">2</button>
+		<button class="tablinks bg-btn5" onclick="openTab(event, '3')">3</button>
+	</div>
+	<div id="0" class="tabcontent" style="display: block;">
+		<div style="margin:115px auto; width:61%;">
+			<p><b>Clique nos fluxos para entender como cada um funciona.</b></p>
+		</div>
+	</div>
+	<div id="1" class="tabcontent" style="display: none;">
+		<div style="margin: 0px auto;display: flex;justify-content: space-between;">
+			<div style="width: 622px;margin: 40px auto;display: flex;justify-content: center;flex-direction: column;">
+				<p><b>Fluxo de problemas</b></p>
+				<p>Problemas podem ser percebidos a partir de indicadores (por ex.: taxas de mortalidade), de
+					eventos,
+					crises e símbolos (por ex.: desastres, acontecimentos), ou no <i>feedback</i> de ações
+					governamentais (por
+					ex.: no acompanhamento de atividades implementadas, retorno de metas e outros). Um problema,
+					quando
+					identificado por dados quantitativos, por crises, ou pelo retorno de ações governamentais,
+					assume
+					grande importância no debate de formulação de políticas, contribuindo para a construção de
+					argumentos em favor de uma política que busque resolver tais questões. Ainda assim, a evidência
+					dos
+					problemas não é capaz de isoladamente influenciar a tomada de decisão, exigindo uma articulação
+					com
+					os demais fluxos.</p>
+			</div>
+		</div>
+	</div>
+	<div id="2" class="tabcontent" style="display: none;">
+		<div style="margin: 0px auto;display: flex;justify-content: space-between;">
+			<div style="width: 622px;margin: 40px auto;display: flex;flex-direction: column;justify-content: center;">
+				<p><b>Fluxo de alternativas e soluções</b></p>
+				<p>São propostas rotineiramente elaboradas por especialistas, funcionários públicos, grupos de
+					interesse, entre outros. Esses diferentes grupos mobilizam comunidades de políticas que se
+					envolvem
+					com determinados temas e aguardam o surgimento de oportunidades para propor soluções para os
+					problemas. As alternativas e soluções estão disponíveis e, quando surgem os problemas, passam
+					por um
+					processo competitivo de seleção, para a efetiva consideração no processo decisório das
+					políticas.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="3" class="tabcontent" style="display: none;">
+		<div style="margin: 0px auto;display: flex;justify-content: space-between;">
+			<div style="width: 622px;margin: 40px auto;display: flex;flex-direction: column;justify-content: center;">
+				<p><b>Fluxo político</b></p>
+				<p>Dimensão da política propriamente dita, na qual as coalizões são construídas a partir de
+					barganhas e
+					negociações. Nesse fluxo, três elementos exercem influência sobre a agenda governamental: o
+					clima ou
+					humor nacional (por ex.: um momento político favorável a mudanças dados o carisma de um
+					governante
+					ou a conjuntura política, econômica e social); as forças políticas organizadas (grupos de
+					pressão);
+					e mudanças no interior do próprio governo.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="bg-footer" style="padding: 0; height: 40px;">
+	<div style="display: flex;justify-content: space-between;">
+		<div style="display: flex;margin-left: 13px;height: 40px;">
+			<div
+				style="width: 80px;height: 26px;background:  var(--color-blue1);color: white;display: flex;align-items: center;justify-content: center;margin: auto;">
+				<p style="font-weight: 900;font-size: 11px;">Unidade 1</p>
+			</div>
+			<p style="font-size: 11px;width: 190px;margin-left: 10px;color: #FFFFFF;">Epidemiologia</p>
+		</div>
+		<div style="display: flex;margin-right: 14px;height: 40px;">
+			<div
+				style="width: 80px;height: 26px;background:  var(--color-blue1);color: white;display: flex;align-items: center;justify-content: center;margin: auto;">
+				<p style="font-weight: 900;font-size: 11px;">Módulo 3</p>
+			</div>
+			<p style="font-size: 11px;margin-left: 10px;color: #FFFFFF;">Análise de Políticas Públicas</p>
+		</div>
+	</div>
+</footer>
+<script>
+	function openTab(evt, tabName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	for (let tab of document.querySelectorAll('.tabcontent')) {
+		tab.onscroll = function (e) {
+			var topOfDiv = Math.max(e.target.scrollTop - 2, 0);
+			e.target.querySelector('div').style.top = topOfDiv + 'px';
+		}
+	}
+
+	document.getElementById("defaultOpen").click();
+</script>
